@@ -1,0 +1,21 @@
+a{
+    margin: 8px 8px 8px 0px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+
+button{
+    margin: 5px 5px 5px 0px;
+}
+
+input{
+    margin: 0px 5px 0px 0px;
+
+}
+#authorList{
+    display:inline-block;
+}
+#bookList{
+
+    display:inline-block;
+}
