@@ -2,6 +2,7 @@ import React,{Component} from "react";
 import Axios from "axios";
 import {useLocation} from "react-router-dom";
 import {withRouter} from '../withRouter';
+import * as events from "events";
 
 class AddBook extends Component{
 
@@ -61,18 +62,21 @@ class AddBook extends Component{
         this.setState({[event.target.name]: event.target.value});
     }
 
+
+
     render(){
         return(
             <div>
                 <form method="POST" encType="multipart/form-date" onSubmit={this.postForm}>
                     <label>Title</label> <br/>
                     <input type="text" value={this.state.bookTitle} name="bookTitle" onChange={this.onFormChange} /> <br/>
-
-                    <label>Genre</label><br/>
-                    <input type="text" value={this.state.bookGenre} name="bookGenre" onChange={this.onFormChange} /><br/>
-
                     <label>Author's name</label><br/>
                     <input type="text" value={this.state.authorName} name="authorName" onChange={this.onFormChange} /><br/>
+                    <div onChange={this.onFormChange}>
+                        <label>Genre</label><br/>
+                        <input type="radio" value={"fiction"} name="bookGenre"  /> Fiction <br/>
+                        <input type="radio" value={"nonfiction"} name="bookGenre"  /> Non-Fiction <br/>
+                    </div>
 
                     <button type="submit" onSubmit={this.postForm}>Submit</button>
                 </form>
